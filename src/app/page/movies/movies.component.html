@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="grid" *ngIf="movie; else else1">
+    <div class="col-6 md:col-3 lg:col-2" *ngFor="let item of movie">
+      <app-movie-item [ItemData]="item"></app-movie-item>
+    </div>
+  </div>
+  <div>
+    <p-paginator
+      [rows]="1"
+      [totalRecords]="1000"
+      (onPageChange)="paginate($event)"
+    ></p-paginator>
+  </div>
+  <ng-template #else1>not found movie</ng-template>
+</div>

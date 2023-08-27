@@ -1,0 +1,16 @@
+<ng-container *ngIf="ItemData">
+  <a class="item" routerLink="/movie/{{ ItemData.id }}">
+    <div class="item-rating">
+      <i class="app-icon">star</i>
+      <span>{{ ItemData.vote_average }}</span
+      >/10
+    </div>
+    <div class="item-image">
+      <img
+        [src]="'https://image.tmdb.org/t/p/w342/' + ItemData.poster_path"
+        [alt]=""
+      />
+    </div>
+    <div class="item-title">{{ ItemData.title }}</div>
+  </a>
+</ng-container>
